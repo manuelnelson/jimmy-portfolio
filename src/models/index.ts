@@ -1,3 +1,2 @@
-export * from './role.model';
-export * from './work.model';
-export * from './home.model';
+// export * from './home.model';
+export * from './slide.model';

@@ -39,15 +39,6 @@ exports = module.exports = function(app) {
 	keystone.redirect('/', '/index.html');
 	keystone.redirect('/home', '/index.html');
 
-	// app.get('/', routes.views.index);
-	// app.get('/home', routes.views.index);
-	//app.get('/audio-demo', routes.views.audioDemo);
-	//app.get('/blog/:category?', routes.views.blog);
-	//app.get('/blog/post/:post', routes.views.post);
-	//app.get('/gallery', routes.views.gallery);
-	//app.all('/contact', routes.views.contact);
-
-	app.all('/api/contact', routes.api.contact);
 	app.get('/api/homes', routes.api.homes);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

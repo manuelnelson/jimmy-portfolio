@@ -32,7 +32,7 @@ module.exports = {
                    use: loaders,
                }),
            },
-            { exclude: /node_modules/, loader: 'ts', test: /\.ts$/ }
+           { exclude: /node_modules/, loader: 'ts-loader', test: /\.ts$/ }
         ]
     },
     plugins: [

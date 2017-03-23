@@ -6,22 +6,22 @@ import {
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Home} from '../models';
+// import {Home} from '../models';
 
 @Injectable()
 export class RestService {
     constructor(private http: Http) {}
 
     getHome() {
-        return this.http.get('/api/homes')
-                .map((response) => {
-                    const json = response.json();
-                    if (response.ok) {
-                        return json.data as Home;                                                
-                    } else {
-                        return this.logError(json.data);
-                    }
-                });
+        // return this.http.get('/api/homes')
+        //         .map((response) => {
+        //             const json = response.json();
+        //             if (response.ok) {
+        //                 return json.data as Home;
+        //             } else {
+        //                 return this.logError(json.data);
+        //             }
+        //         });
     }
 
     private logError(error: any) {

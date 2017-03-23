@@ -4,7 +4,7 @@
 $base-font-size:16px;
 $font-family-fontawesome: 'Font Awesome';
 $font-family-ionicons: 'Ionicons';
-$font-family-noto: "Noto Sans";
+$font-family-roboto: "Roboto", sans-serif;
 $font-family-rasa: "Rasa";
 
 $font-weight-light: 300;
@@ -16,7 +16,7 @@ $font-weight-bold: 700;
 //				Font Assignments
 //------------------------------------------
 
-$font-family-sans-serif: $font-family-noto;
+$font-family-sans-serif: $font-family-roboto;
 $font-family-serif: $font-family-rasa;
 
 
