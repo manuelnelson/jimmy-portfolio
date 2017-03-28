@@ -4,9 +4,8 @@
 	keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
-	keystone.list('Home').model.findOne().where('state', 'published').populate({
-		path: 'work',
-		populate: {path: 'roles technologies'}
+	keystone.list('Home').model.findOne().populate({
+		path: 'carousel'
 	}).exec(function(err,result){
 			return res.json({success:true,data:result});
 	})

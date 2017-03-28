@@ -16,11 +16,9 @@ var Home = new keystone.List('Home', {
 
 Home.add({
 	name: { type: String, required: true },
-	work: { type: Types.Relationship, ref: 'Work', many: true},
+	carousel: { type: Types.Relationship, ref: 'Slide', many: true},
 	about: { type: Types.Html, wysiwyg: true },
-	contact: { type: Types.Html, wysiwyg: true },
 	backgroundImage: { type: Types.CloudinaryImage },
-	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true }
 });
 
 Home.defaultColumns = 'name, state|20%';

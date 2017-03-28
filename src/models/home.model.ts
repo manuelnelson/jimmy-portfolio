@@ -1,8 +1,8 @@
+import {Slide} from './slide.model'
 export interface Home{
     name: string;
-    // work: Array<Work>;
+    carousel: Array<Slide>;
     about: string;
-    contact: string;
     backgroundImage:{
         url:string;
     }
