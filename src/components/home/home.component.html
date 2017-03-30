@@ -7,12 +7,10 @@
 	</section>
 	<section class="main-content">
 		<div class="carousel">
-			<carousel-component></carousel-component>			
+			<carousel-component *ngIf="home" [slides]="home?.carousel"></carousel-component>
 		</div>
 		<div class="additional-tile">
-			<p>
-				Here's some content that describes me.  Maybe has some contact info.  Use for whatever you want here.
-			</p>
+			<p [innerHTML]="home?.about"></p>
 		</div>
 	</section>
 </div>

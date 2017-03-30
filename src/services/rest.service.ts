@@ -12,7 +12,7 @@ import {Home} from '../models';
 export class RestService {
     constructor(private http: Http) {}
 
-    getHome() {
+    getHome() : Observable<Home> {
         return this.http.get('/api/homes')
                 .map((response) => {
                     const json = response.json();

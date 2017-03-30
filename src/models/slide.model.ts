@@ -1,10 +1,12 @@
 export interface Slide{
     prev: boolean;
     next: boolean;
-    url: string;
-    imageUrl: string;
-    type: string;
-    title: string;
+    name: { type: String, required: true },
+    subTitle: string,
+    title: string,
+    image: {
+        url: string
+    },
     active: boolean;
     left: boolean;
     right: boolean;

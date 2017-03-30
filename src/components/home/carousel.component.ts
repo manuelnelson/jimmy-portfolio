@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, Input, OnInit} from '@angular/core';
 //import { ZoneTask } from "@angular/core/src/zone";
 //import { RestService } from '../../services/rest.service';
 import { Slide } from '../../models';
@@ -6,8 +6,8 @@ import { Slide } from '../../models';
     selector: 'carousel-component',
     template: require('./carousel.component.html')
 })
-export class CarouselComponent {
-    slides: Array<Slide> = [];
+export class CarouselComponent implements OnInit{
+    @Input() slides: Array<Slide>;
     nextSlideNdx: number = 0;
     currentSlideNdx: number = 0;
     currentTimeout: number = 0;
@@ -17,42 +17,9 @@ export class CarouselComponent {
     autoSlide: boolean = true;
     intervalRunning: boolean = false;
     constructor() {
-        let slide = <Slide>{
-            url:"#",
-            imageUrl:"http://placekitten.com/900/400",
-            type: "Content Type",
-            title: "Client Name: Made with Adobe Illustrator",
-            active: true,
-            prev: false,
-            right:false,
-            left: false
-        };
-        let slide2 = <Slide>{
-            url:"#",
-            imageUrl:"http://placekitten.com/900/400",
-            type: "Content Type2",
-            title: "Client Name2: Made with Adobe Illustrator",
-            active: false,
-            prev: false,
-            right:false,
-            left: true,
-            next: false
-        };
-        let slide3 = <Slide>{
-            url:"#",
-            imageUrl:"http://placekitten.com/900/400",
-            type: "Content Type3",
-            title: "Client Name3: Made with Adobe Illustrator",
-            active: false,
-            prev: false,
-            right:false,
-            left: true,
-            next: false
-        };
-        this.slides.push(slide);
-        this.slides.push(slide2);
-        this.slides.push(slide3);
-
+    }
+    ngOnInit(){
+        this.slides[0].active = true;
         if(this.autoSlide){
             this.startInterval();
         }

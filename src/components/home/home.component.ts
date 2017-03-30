@@ -8,10 +8,10 @@ export class HomeComponent implements OnInit {
     home: Home;
     restApiService: RestService;
     constructor(private restService: RestService) {
-        this.restApiService = restService;
     }
     ngOnInit() {
-        this.restApiService.getHome().subscribe((home: Home) => {
+        this.restService.getHome().subscribe((home: Home) => {
+            console.log(home)
             this.home = home;
         });
     }
