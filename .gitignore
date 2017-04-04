@@ -28,7 +28,7 @@ node_modules
 .env
 
 //remove admin file
-*admins.js
+//*admins.js
 
 src/**/*.js
 src/**/*.js.map
