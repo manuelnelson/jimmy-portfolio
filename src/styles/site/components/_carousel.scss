@@ -30,14 +30,16 @@
             width: 100%;
             top: 0;
             left: 0;
-            transition: left 1s ease-in-out;
+            transform: translateX(0);
+            transition: transform 1s ease-in-out;
+            will-change: transform;
         }
 
         &.left {
-            left: -100%;
+            transform: translateX(-100%);
         }
         &.right {
-            left: 100%;
+            transform: translateX(100%);
         }
     }
     .caption-area{

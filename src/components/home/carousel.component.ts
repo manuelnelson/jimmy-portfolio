@@ -1,6 +1,4 @@
 import { Component, NgZone, Input, OnInit} from '@angular/core';
-//import { ZoneTask } from "@angular/core/src/zone";
-//import { RestService } from '../../services/rest.service';
 import { Slide } from '../../models';
 @Component({
     selector: 'carousel-component',
@@ -25,7 +23,7 @@ export class CarouselComponent implements OnInit{
         }
     }
     startInterval(){
-        this.slideTimer = setInterval(()=>{
+        this.slideTimer = window.setInterval(()=>{
             this.next(true);
             this.intervalRunning = true;
         },this.slideInterval)
@@ -35,8 +33,8 @@ export class CarouselComponent implements OnInit{
         this.intervalRunning = false;
     }
     next(ignoreClear: boolean){
-        if(!ignoreClear)
-            this.clearInterval();
+        // if(!ignoreClear)
+        this.clearInterval();
         this.currentSlideNdx = this.nextSlideNdx;
         if(this.nextSlideNdx == this.slides.length -1)
             this.nextSlideNdx = 0;
@@ -58,27 +56,28 @@ export class CarouselComponent implements OnInit{
         if(goForward){
             this.slides[this.nextSlideNdx].left = true;
             this.slides[this.nextSlideNdx].active = true;
-            setTimeout(()=>{
+            window.setTimeout(()=>{
                 this.slides[this.nextSlideNdx].left = false;
                 this.slides[this.currentSlideNdx].right = true;
-            },0)
+            },5)
         }
         else{
             this.slides[this.nextSlideNdx].right = true;
             this.slides[this.nextSlideNdx].active = true;
-            setTimeout(()=>{
+            window.setTimeout(()=>{
                 this.slides[this.nextSlideNdx].right = false;
                 this.slides[this.currentSlideNdx].left = true;
-            },0)
+            },5)
         }
-        this.currentTimeout = setTimeout(()=>{
+        this.currentTimeout = window.setTimeout(()=>{
             this.slides[this.currentSlideNdx].active = false;
             if(goForward)
                 this.slides[this.currentSlideNdx].right = false;
             else
                 this.slides[this.currentSlideNdx].left = false;
-            if(!this.intervalRunning)
-                this.startInterval();
+            // if(!this.intervalRunning)
+            //this.clearInterval();
+            this.startInterval();
         },1000);
     }
 
