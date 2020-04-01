@@ -1,8 +1,10 @@
 <div class="home">
 	<section class="hero">
-		<video src="/images/jimmy-home.mp4" loop="true" autoplay="true"></video>
+		<!-- <video src="/images/jimmy-home.mp4" loop="true" autoplay="true"></video> -->
+		<video [src]="home?.backgroundImage.filename" *ngIf="home?.backgroundImage" loop="true" autoplay="true"></video>
 		<div class="hero-content">
-			<h1>Jimmy Watkins</h1>
+			<img *ngIf="home?.logo" src="home?.logo.filename" />
+			<h1 *ngIf="!home?.logo">Jimmy Watkins</h1>
 		</div>
 	</section>
 	<section class="main-content">

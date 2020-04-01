@@ -73,6 +73,7 @@
     "combine": "parallelshell \"npm run build:dev\" \"node keystone.js\"",
     "build:dev": "webpack-dev-server --env=dev --config ./webpack/webpack.dev.js",
     "build:prod": "webpack --env=prod --config ./webpack/webpack.prod.js",
+    "prestart": "npm run build:prod",
     "dev": "webpack-dev-server --config ./webpack/webpack.dev.js"
   },
   "main": "keystone.js"

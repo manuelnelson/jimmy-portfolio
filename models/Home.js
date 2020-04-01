@@ -13,12 +13,19 @@ var Home = new keystone.List('Home', {
 	map: { name: 'name' },
 	autokey: { path: 'slug', from: 'name', unique: true }
 });
-
+var storage = new keystone.Storage({
+	adapter: keystone.Storage.Adapters.FS,
+	fs: {
+		path: keystone.expandPath('./public/files'),
+		publicPath: '/public/files/',
+	}
+});
 Home.add({
 	name: { type: String, required: true },
 	carousel: { type: Types.Relationship, ref: 'Slide', many: true},
 	about: { type: Types.Html, wysiwyg: true },
-	backgroundImage: { type: Types.CloudinaryImage },
+	logo:{ type: Types.CloudinaryImage },
+	backgroundImage: { type: Types.File, storage:storage }
 });
 
 Home.defaultColumns = 'name, state|20%';

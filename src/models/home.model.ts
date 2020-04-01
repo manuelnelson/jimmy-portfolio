@@ -4,6 +4,9 @@ export interface Home{
     carousel: Array<Slide>;
     about: string;
     backgroundImage:{
+        filename:string; 
+    }
+    logo:{
         url:string;
     }
 }

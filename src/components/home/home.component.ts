@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
     }
     ngOnInit() {
         this.restService.getHome().subscribe((home: Home) => {
-            console.log(home)
+            home.backgroundImage.filename = '/files/' + home.backgroundImage.filename;
             this.home = home;
         });
     }
