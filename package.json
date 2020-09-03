@@ -22,7 +22,7 @@
     "keystone": "^4.0.0-beta.5",
     "lodash": "^4.13.1",
     "moment": "^2.10.6",
-    "node-sass": "^3.13.1",
+    "node-sass": "^4.14.1",
     "node-sass-middleware": "^0.9.7",
     "reflect-metadata": "^0.1.9",
     "rxjs": "^5.1.1",
